@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}
+<title>Agregar Noticia</title>
+{% endblock %}
+{% block navegacion %}
+{% include 'navegacion.html' %}
+{% endblock %}
+
+{% block contenido %}
+<form method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+
+     <h2>Agregar Noticia</h2>
+     <div>
+        {{ form.as_p }}
+    
+    <input type="submit" value="Guardar Noticia" data-bs-toogle="modal" >
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Noticia Cargado!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>su noticia fue cargada con exito</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+{% endblock %}
+
