@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}
+<title>Listar Noticias</title>
+{% endblock %}
+
+{% block contenido %}
+<section data-bs-version="5.1" class="timeline3 cid-tf4QbpyVP7" id="timeline3-o">
+{% if noticias %}
+
+    <div class="container-fluid" style="margin-top: 2%">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2" style="text-align: center;">
+                <strong><h1>Noticias</h1></strong>
+            </h3>
+        </div>
+        <div class="row" style="margin-bottom: 2%;">
+            {% for p in noticias %}
+            <div class="col-md-4 mb-3">
+                <div class="card" style="text-align: center;">
+                    <div class="card-img-top" style="display: block; width: 70%; margin: auto;">
+                        <img src="{{ p.imagen.url }}" class="card-img-top w-50" alt="{{p.titulo}}">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{p.titulo}}</h5>
+                        <p style='text-align: center;' class="mbr-timeline-date "><small
+                                class="text-body-secondary">{{p.fecha_agregado}}</small></p>
+                        <p class="card-text">Si quiere leer mas acerca de este Noticia, click en leer más</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Categoria: {{p.categoria}}</li>
+                        <li class="list-group-item">Autor: {{p.autor}}</li>
+                        <li class="list-group-item">Agregado por: {{p.colaborador}}</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="{% url 'apps.noticias:detalle_noticia' p.pk %}" class="btn btn-primary"
+                            style="font-size: small;">Leer
+                            más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            {% endfor %} {% endif %}
+            </section>
+            {% endblock %}

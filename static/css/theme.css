@@ -1,0 +1,58 @@
+/* Estilos generales */
+body {
+    background-color: #b6b6b6; /* Cambia este valor al color que desees */
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #c5c5c5;
+    color: #2008fd;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #c9c9c9;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.imagen {
+    width: 40%; 
+    height: 40%;
+    display: block; /* Para que el margen horizontal funcione */
+    margin: 0 auto; /* Establece los márgenes izquierdo y derecho automáticamente */
+    
+}
+
+.card {
+    background-color: #c9c9c9; /* Cambia este valor al color que desees */
+    /* Otros estilos de la tarjeta */
+}
+
+.card-title {
+    background-color: #c9c9c9; /* Cambia este valor al color que desees */
+    /* Otros estilos de la tarjeta */
+}
+
+.list-group-item {
+    background-color: #c9c9c9; /* Cambia este valor al color que desees */
+    /* Otros estilos de la tarjeta */
+}
+.registrarse {
+background-color: #f9f9f9;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbarSupportedContent {
+        background-color: #c7c7c7; /* Cambia el color de fondo de la barra de navegación */
+        padding: 10px 20px; /* Añade espacio alrededor de los elementos de la barra de navegación */
+}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}
+<title>Agregar Categoria</title>
+{% endblock %}
+{% block navegacion %}
+{% include 'navegacion.html' %}
+{% endblock %}
+
+{% block contenido %}
+<div class="main-container" style="text-align: center; margin-top: 12%;">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="overlay">
+            <div class="con">
+                <header class="head-form">
+                    <h3>Agregar Categoria</h3>
+                    <p>Ingrese los datos y presione el botón de guardar</p>
+                </header>
+                <div>
+                    {{form.as_p}}
+                    <input type="submit" value="Guardar Categoria">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

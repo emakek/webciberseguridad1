@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block navegacion %}
+{% include 'navegacion.html' %}
+{% endblock %}
+
+{%block titulo%}
+<title>Registrar_usuario</title>
+{% endblock %}
+
+{%block contenido %}
+<section id="registrarse"></section>
+<form enctype="multipart/form-data" action="" method="post"> {% csrf_token %}
+    {{ form.as_p }}
+<button type="submit" class="btn btn-primary">Registrarse</button>
+</form>
+</section>
+{% endblock %}
