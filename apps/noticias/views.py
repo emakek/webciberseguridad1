@@ -39,6 +39,20 @@ class ListarNoticias(ListView):
     template_name = "noticias/listar_noticias.html"
     context_object_name = "noticias"
 
+    def get_context_data(self) :
+        context = super().get_context_data()
+        categorias = Categoria.objects.all()
+        context['categorias'] = categorias
+        return context
+
+    def get_queryset(self):
+        query = self.request.GET.get('buscador')
+        queryset = super().get_queryset()
+
+        if query:
+            queryset = queryset.filter(titulo__icontains = query)
+        return queryset.order_by('titulo')
+
 class EliminarNoticia(DeleteView):
     model = Noticias
     template_name = "noticias/confirma_eliminar.html"
@@ -82,6 +96,24 @@ def listar_por_categoria(request, categoria):
         'categorias' : categorias        
     }
     return render(request,template_name,contexto)
+
+def ordenar_por(request):
+    # Obtenemos el dato de 'orden' de la URL -> metodo GET ( para esto tiene que haber un elemento html que contenga el name = 'orden' y el valor(value=''))
+    orden = request.GET.get('orden', '')
+    #Validar lo que contiene Value
+    if orden == 'fecha':
+        noticias = Noticias.objects.order_by('fecha_agregado')
+    elif orden == 'titulo':
+        noticias = Noticias.objects.order_by('titulo')
+    else:
+        noticias = Noticias.objects.all()
+    categorias = Categoria.objects.all()
+    template_name = 'noticias/listar_noticias.html'
+    contexto = {
+        'noticias' : noticias,
+        'categorias' : categorias,
+    }
+    return render(request, template_name, contexto)
 
 
 

@@ -1,56 +1,54 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg mi-barra-navegacion" id="nav">
     <div class="container-fluid">
-      <a href="{% url 'inicio' %}">
-            <img src="{% static 'img/logo.png' %}" alt="logo"
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'acercade'%}">SobreNosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contacto'%}">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'apps.noticias:listar_noticias'%}">Noticias</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'apps.usuarios:registrar' %}">Registrarse</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'apps.usuarios:iniciar_sesion' %}">Iniciar Sesión</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'apps.usuarios:salir' %}">Cerrar Sesión</a>
-          </li>
-          {% if user.is_authenticated and user.es_colaborador %}
-                <a class="navbar-brand" href="#">
-                    <img src="{{user.imagen.url}}" alt="perfil" width="50" height="50"
-                        class="rounded-circle flex-shrink-0">
-                </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'acercade'%}">SobreNosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contacto'%}">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'apps.noticias:listar_noticias'%}">Noticias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'apps.usuarios:registrar' %}">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'apps.usuarios:iniciar_sesion' %}">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'apps.usuarios:salir' %}">Cerrar Sesión</a>
+                </li>
+                {% if user.is_authenticated and user.es_colaborador %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        {{user.username}}
+                        <img src="{{user.imagen.url}}" alt="perfil" width="30" height="30"
+                            class="rounded-circle flex-shrink-0 me-2">{{user.username}}
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{% url 'apps.noticias:agregar_noticia' %}">Agregar Noticias</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="{% url 'apps.noticias:agregar_categoria' %}">Agregar Categorias</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="{% url 'apps.usuarios:listar_usuarios' %}">Listar Usuarios</a></li>
-                      <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'apps.noticias:agregar_noticia' %}">Agregar
+                                Noticias</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'apps.noticias:agregar_categoria' %}">Agregar
+                                Categorias</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'apps.usuarios:listar_usuarios' %}">Listar
+                                Usuarios</a></li>
+                        <li><hr class="dropdown-divider"></li>
                     </ul>
-                    
-          
-                    
-               {% endif %}
-         </div>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
     </div>
- </nav>
+</nav>

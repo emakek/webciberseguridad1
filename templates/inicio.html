@@ -4,55 +4,51 @@
 <title>Inicio</title>
 {% endblock %}
 {% block contenido %}
-<h3>Bienvenido a la pagina CiberInfo {{usuarios.nombre}}</h3>
-<div style="margin-top: 50 px; margin-bottom: 50px;">
-    <h1 style="text-align: center; font-family:Arial, Helvetica, sans-serif;">CiberInfo</h1>
-    <p style="margin-left: 50px; margin-right: 50px; font-family:Arial, Helvetica, sans-serif;">
-    La ciberseguridad es la práctica de proteger equipos, redes, aplicaciones de software, sistema críticos y datos de posibles amenazas digitales.
-    Las organizaciones tienen la responsabilidad de proteger los datos para mantener la confianza del cliente y cumplir la normativa. <br>
-    
+<div style="margin-top: 50px; margin-bottom: 50px;">
+  <h1 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">CiberInfo</h1>
+  <p style="margin: 0 auto; max-width: 800px; text-align: justify; font-family: Arial, Helvetica, sans-serif;">
+    La ciberseguridad es la práctica de proteger equipos, redes, aplicaciones de software, sistemas críticos y datos de posibles amenazas digitales.
+    Las organizaciones tienen la responsabilidad de proteger los datos para mantener la confianza del cliente y cumplir la normativa. <br><br>
     La ciberseguridad es importante en los negocios de varios sectores, como la energía, el transporte, el comercio al detalle y la fabricación,
-use sistemas digitales y conectividad de alta velocidad para proporcionar un servicio eficiente al cliente y ejecutar operaciones empresariales rentables</p>
+    que usan sistemas digitales y conectividad de alta velocidad para proporcionar un servicio eficiente al cliente y ejecutar operaciones empresariales rentables.
+  </p>
 </div>
-<section>
-    <div class="container">
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="card-img-top" style="display: block; width: 50%; margin: auto;">
-                        <img src="{% static 'img/main.jpg' %}" class="card-img-top w-75">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card-img-top" style="display: block; width: 50%; margin: auto;">
-                        <img src="{% static 'img/noticia2.jpg' %}" class="card-img-top w-75">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card-img-top" style="display: block; width: 50%; margin: auto;">
-                        <img src="{% static 'img/noticia3.png' %}" class="card-img-top w-75">
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
+
+<section class="carrusel-section">
+  <div class="container text-center">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'img/carrusel1.jpg' %}" class="carrusel-img" alt="Imagen 1">
         </div>
+        <div class="carousel-item">
+          <img src="{% static 'img/carrusel2.jpg' %}" class="carrusel-img" alt="Imagen 2">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'img/carrusel.jpg' %}" class="carrusel-img" alt="Imagen 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
     </div>
+  </div>
 </section>
+
+
 {% endblock %}

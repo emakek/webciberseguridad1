@@ -10,7 +10,7 @@
 {% block contenido %}
 {% if user.es_colaborador %}
 <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
         data-bs-toggle="dropdown" aria-expanded="false">
         Administrar
     </button>
@@ -42,7 +42,7 @@
         {% for item in opiniones %}
         {% if user.is_authenticated and user.id == item.usuario.id%}
         <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Opinion
             </button>

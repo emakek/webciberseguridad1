@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         {% if user.es_colaborador %}
-                        <a class="btn btn-primary" style="font-size: smaller; width: 75%;"
+                        <a class="btn btn-secondary" style="font-size: smaller; width: 75%;"
                             href="{% url 'apps.usuarios:eliminar_usuario' item.pk %}">Eliminar:{{item.username}}</a>
                         {% endif %}
                     </div>
